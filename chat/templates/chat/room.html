@@ -1,0 +1,247 @@
+﻿<!-- chat/templates/chat/room.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>OGS</title>
+    <link rel="stylesheet" href="">
+    <style type="text/css">
+        body {
+            
+        }
+        div {
+         /*   width: 100%;
+            margin: 0 auto;
+            text-align: left;*/
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        ul li {
+            list-style: none;
+        }
+        label {
+            color: white;
+            margin-right: 10px;
+            width: 20px;
+            float: left;
+            /*font-size: 120%;*/
+            font-size: 30px;
+            display: inline-block;
+        }
+        font {
+            color: white;
+            margin-right: 10px;
+            width: 20px;
+            float: left;
+            /*font-size: 120%;*/
+            display: inline-block;
+        }
+        ul {
+            width: 500px;
+            margin: 0 auto; /*中央*/
+        }
+
+        input {
+            /*width: 650px;
+            height: 30px;*/
+           /* position: relative;
+            left: 300px;*/
+            font-size: 130%;            
+            color: black;
+            /*display: flex;*/          
+        }        
+        p {
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body background="file:///C:\Users\k160430357\AppData\Local\Programs\Python\Python38\Scripts\mysite2\chat\templates\chat\backgroundtile.png">
+    <div id="main1 ">
+        <header>
+            <!-- ヘッダーはここに記述 -->
+        </header>
+        <h1>オペレートシステム</h1>
+        <form>
+            <div style="position:absolute; top:100px; left:300px">
+                {% load static%}
+                <img src="{% static "chat/G_char.png"%}" width="80" height="80">
+            </div>
+            <div style="position:absolute; top:220px; left:300px">
+                {% load static%}
+                <img src="{% static "chat/H_char.png"%}" width="100" height="100">
+            </div>
+            <div style="position:absolute; top:380px; left:300px">
+                {% load static%}
+                <img src="{% static "chat/J_char.png"%}" width="80" height="80">
+            </div>
+
+            <ul>
+                <!--<textarea id="output2" cols="40" rows="1" readonly></textarea><br>-->
+                <!--<span style="white-space:nowrap; color: red;">
+        1-->
+                <li class="output1">
+                    <!--<label for="output1">1</label>-->
+                    <font size="6">1</font>
+                    <input id="outfuc1" name="outfuc1" size="15" style="height: 35px; font-weight: bold; color: red;" readonly>
+                    <input id="outalarm1" name="outalarm1" size="20" style="height: 35px; font-weight: bold; color: red;" readonly><br>
+                </li>
+                <!--</span>-->
+                <li class="output2">
+                    <!--<label for="output2">2</label>-->
+                    <font size="6">2</font>
+                    <input id="outfuc2" name="outfuc2" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm2" name="outalarm2" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                </li>
+                <li class="output3">
+                    <!--<label for="output3">3</label>-->
+                    <font size="6">3</font>
+                    <input id="outfuc3" name="outfuc3" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm3" name="outalarm3" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                    <br />
+                </li>
+
+                <li class="output4">
+                    <!--<label for="output4">4</label>-->
+                    <font size="6">1</font>
+                    <input id="outfuc4" name="outfuc4" size="15" style="height: 35px; font-weight: bold; color: red;" readonly>
+                    <input id="outalarm4" name="outalarm4" size="20" style="height: 35px; font-weight: bold; color: red;" readonly><br>
+                </li>
+                <li class="output5">
+                    <!--<label for="output5">5</label>-->
+                    <font size="6">2</font>
+                    <input id="outfuc5" name="outfuc5" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm5" name="outalarm5" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                </li>
+                <li class="output6">
+                    <!--<label for="output6">6</label>-->
+                    <font size="6">3</font>
+                    <input id="outfuc6" name="outfuc6" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm6" name="outalarm6" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                    <br />
+                </li>
+                <li class="output7">
+                    <!--<label for="output7">7</label>-->
+                    <font size="6">1</font>
+                    <input id="outfuc7" name="outfuc7" size="15" style="height: 35px; font-weight: bold; color: red;" readonly>
+                    <input id="outalarm7" name="outalarm7" size="20" style="height: 35px; font-weight: bold; color: red;" readonly><br>
+                </li>
+                <li class="output8">
+                    <!--<label for="output8">8</label>-->
+                    <font size="6">2</font>
+                    <input id="outfuc8" name="outfuc8" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm8" name="outalarm8" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                </li>
+                <li class="output9">
+                    <!--<label for="output9">9</label>-->
+                    <font size="6">3</font>
+                    <input id="outfuc9" name="outfuc9" size="15" style="height: 35px; font-weight: bold;" readonly>
+                    <input id="outalarm9" name="outalarm9" size="20" style="height: 35px; font-weight: bold;" readonly><br>
+                </li>
+                <!--<li class="output10">-->
+                <!--<label for="output10">10</label>-->
+                <!--<font size="5">10</font>
+            <input id="outfuc10" name="outfuc10" size="15" style="height: 30px; font-weight: bold;" readonly>
+            <input id="outalarm10" name="outalarm10" size="20" style="height: 30px; font-weight: bold;" readonly><br>
+        </li>-->
+
+            </ul>
+        </form>
+        <!--<input id="chat-message-input" type="text" size="100"><br>
+        <input id="chat-message-submit" type="button" value="Send">-->
+        {{ room_name|json_script:"room-name" }}
+        <script>
+            const roomName = JSON.parse(document.getElementById('room-name').textContent);
+            const chatSocket = new WebSocket(
+                //'ws://'
+                //+ window.location.host
+                //+ '/ws/gsh/'
+                //+ roomName
+                //+ '/'
+                'ws://'
+                + window.location.host
+                + '/ws/gsh/'
+            );
+
+            chatSocket.onmessage = function (e) {
+                const data = JSON.parse(e.data);
+                //document.querySelector('#chat-log').value += (data.message + '\n'); # +=で追記 , '\n'でスクロール可
+                if (data.Gmesg_fuc1 != null) {
+                    document.querySelector('#outfuc1').value = (data.Gmesg_fuc1);
+                }
+                if (data.Gmesg_fuc2 != null) {
+                    document.querySelector('#outfuc2').value = (data.Gmesg_fuc2);
+                }
+                if (data.Gmesg_fuc3 != null) {
+                    document.querySelector('#outfuc3').value = (data.Gmesg_fuc3);
+                }
+                if (data.Hmesg_fuc1 != null) {
+                    document.querySelector('#outfuc4').value = (data.Hmesg_fuc1);
+                }
+                if (data.Hmesg_fuc2 != null) {
+                    document.querySelector('#outfuc5').value = (data.Hmesg_fuc2);
+                }
+                if (data.Hmesg_fuc3 != null) {
+                    document.querySelector('#outfuc6').value = (data.Hmesg_fuc3);
+                }
+
+
+                document.querySelector('#outfuc7').value = (data.message7);
+                document.querySelector('#outfuc8').value = (data.message8);
+                document.querySelector('#outfuc9').value = (data.message9);
+                //document.querySelector('#outfuc10').value = (data.message10);
+
+                if (data.Gmesg_alarm1 != null) {
+                    document.querySelector('#outalarm1').value = (data.Gmesg_alarm1);
+                }
+                if (data.Gmesg_alarm2 != null) {
+                    document.querySelector('#outalarm2').value = (data.Gmesg_alarm2);
+                }
+                if (data.Gmesg_alarm3 != null) {
+                    document.querySelector('#outalarm3').value = (data.Gmesg_alarm3);
+                }
+                if (data.Hmesg_alarm1 != null) {
+                    document.querySelector('#outalarm4').value = (data.Hmesg_alarm1);
+                }
+                if (data.Hmesg_alarm2 != null) {
+                    document.querySelector('#outalarm5').value = (data.Hmesg_alarm2);
+                }
+                if (data.Hmesg_alarm3 != null) {
+                    document.querySelector('#outalarm6').value = (data.Hmesg_alarm3);
+                }
+
+
+                document.querySelector('#outalarm7').value = (data.message17);
+                document.querySelector('#outalarm8').value = (data.message18);
+                document.querySelector('#outalarm9').value = (data.message19);
+                //document.querySelector('#outalarm10').value = (data.message20);
+
+            };
+
+            chatSocket.onclose = function (e) {
+                console.error('Chat socket closed unexpectedly');
+            };
+
+            document.querySelector('#chat-message-input').focus();
+            document.querySelector('#chat-message-input').onkeyup = function (e) {
+                if (e.keyCode === 13) {  // enter, return
+                    document.querySelector('#chat-message-submit').click();
+                }
+            };
+
+            document.querySelector('#chat-message-submit').onclick = function (e) {
+                const messageInputDom = document.querySelector('#chat-message-input');
+                const message = messageInputDom.value;
+                chatSocket.send(JSON.stringify({
+                    'message': message
+                }));
+                messageInputDom.value = '';
+            };
+        </script>
+    </div>
+</body>
+</html>
