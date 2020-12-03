@@ -15,7 +15,8 @@ import dj_database_url #Herokuではsqlite3が使えないため
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))   #変更後
 
 
 # Quick-start development settings - unsuitable for production
@@ -117,7 +118,7 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'].update(db_from_env)
 #↓Heroku用CSS設定
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
