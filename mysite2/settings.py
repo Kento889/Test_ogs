@@ -81,6 +81,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite2.wsgi.application'
+# ASGIの起点を指定
+# sys.path.append(APP_ROOT_PATH)してるからmysiteは省略できる
+ASGI_APPLICATION = 'mysite2.routing.application'
+#ASGI_APPLICATION = 'mysite2.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
@@ -167,10 +171,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ASGIの起点を指定
-# sys.path.append(APP_ROOT_PATH)してるからmysiteは省略できる
-ASGI_APPLICATION = 'mysite2.routing.application'
-#ASGI_APPLICATION = 'mysite2.asgi.application'
 
 
 #Heroku開発環境用追加
