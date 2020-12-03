@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url #Herokuではsqlite3が使えないため
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,14 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #↓一旦Heroku用で無効
-#SECRET_KEY = '-dom#8hc4_4wo&cbg&wt@pyfy5@vgwog7e536b)go79et2+hjt'
+SECRET_KEY = '-dom#8hc4_4wo&cbg&wt@pyfy5@vgwog7e536b)go79et2+hjt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#↓'*' Heroku用
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -56,8 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', #Heroku用追加(CSS反映のため)
-
 ]
 
 ROOT_URLCONF = 'mysite2.urls'
@@ -96,25 +90,12 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-#↓Heroku用データベース(sqlite3使えないため)
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'name',
-        'USER': 'user',
-        'PASSWORD': '',
-        'HOST': 'host',
-        'PORT': '',
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-#↓Heroku用
-import os
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
 
 #HerokuではDjangoで設定されているsqlite3では動作せず、
 #Herokuのデフォルトのpostgresqlが使われるように設定する。
@@ -168,18 +149,17 @@ ASGI_APPLICATION = 'mysite2.routing.application'
 
 
 #Heroku開発環境用追加
-DEBUG = False
+#DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+#try:
+#    from .local_settings import *
+#except ImportError:
+#    pass
 
-if not DEBUG:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    import django_heroku
-    django_heroku.settings(locals())
-   
+#if not DEBUG:
+#    import django_heroku
+#    django_heroku.settings(locals())
+#    SECRET_KEY = os.environ['SECRET_KEY']
 
 
 
